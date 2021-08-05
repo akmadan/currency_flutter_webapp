@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Open Exchange App',
         theme: ThemeData(
+          fontFamily: 'DMSans',
           primaryColor: Colors.pink,
         ),
         debugShowCheckedModeBanner: false,
