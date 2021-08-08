@@ -1,5 +1,4 @@
 import 'package:exhange_rates_flutter/components/anyToAny.dart';
-import 'package:exhange_rates_flutter/components/responsive.dart';
 import 'package:exhange_rates_flutter/components/usdToAny.dart';
 import 'package:exhange_rates_flutter/functions/fetchrates.dart';
 import 'package:exhange_rates_flutter/models/ratesmodel.dart';
@@ -40,6 +39,7 @@ class _HomeState extends State<Home> {
         body: Container(
           height: h,
           width: w,
+          padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/currency.jpeg'),
@@ -62,15 +62,13 @@ class _HomeState extends State<Home> {
                             return Center(child: CircularProgressIndicator());
                           }
                           return Column(
-                            // direction: ResponsiveWidget.isLargeScreen(context)
-                            //     ? Axis.horizontal
-                            //     : Axis.vertical,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              AnyToAny(
+                              UsdToAny(
                                 currencies: currSnapshot.data!,
                                 rates: snapshot.data!.rates,
                               ),
-                              UsdToAny(
+                              AnyToAny(
                                 currencies: currSnapshot.data!,
                                 rates: snapshot.data!.rates,
                               ),
